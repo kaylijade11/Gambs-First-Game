@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1p6sj0gwc818"]
+
+[ext_resource type="Texture2D" uid="uid://bqm8lnpt85iek" path="res://Assets/Sprites/AreaTemplate.png" id="1_ddayc"]
+
+[node name="Area(1,1)" type="Node2D" unique_id=476467761]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1344644748]
+texture = ExtResource("1_ddayc")
