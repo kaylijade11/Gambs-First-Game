@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1p6sj0gwc818" path="res://scenes/Area(1, 1).tscn" id="3_lrqlo"]
 [ext_resource type="PackedScene" uid="uid://k81dxc7535qm" path="res://scenes/Area(2, 1).tscn" id="4_kycxp"]
 [ext_resource type="PackedScene" uid="uid://c7h6a7q8t0n37" path="res://scenes/Area(3,1).tscn" id="5_j287u"]
+[ext_resource type="Texture2D" uid="uid://deeemdsloqm7t" path="res://assets/Sprites/Right Arrow.png" id="6_3hfy5"]
 [ext_resource type="PackedScene" uid="uid://bsx4hsacnruf8" path="res://scenes/Area (2,2).tscn" id="6_5sfjl"]
 [ext_resource type="Script" uid="uid://hmtx6wurmfil" path="res://scripts/ui_manager.gd" id="7_j287u"]
 
@@ -41,6 +42,8 @@ offset_right = -20.0
 offset_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 2
+icon = ExtResource("6_3hfy5")
+flat = true
 
 [node name="LeftButton" type="Button" parent="CanvasLayer/UIManager" unique_id=1793632511]
 anchors_preset = 4
