@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1p6sj0gwc818"]
 
-[ext_resource type="Texture2D" uid="uid://bqm8lnpt85iek" path="res://Assets/Sprites/AreaTemplate.png" id="1_ddayc"]
+[ext_resource type="Texture2D" uid="uid://calwwp7ntoab7" path="res://assets/Sprites/Area (1,1).png" id="1_ddayc"]
 
 [node name="Area(1,1)" type="Node2D" unique_id=476467761]
 

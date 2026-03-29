@@ -1,34 +1,90 @@
 [gd_scene format=3 uid="uid://bkc7h3xwpgba2"]
 
-[ext_resource type="Texture2D" uid="uid://bqm8lnpt85iek" path="res://Assets/Sprites/AreaTemplate.png" id="1_j5px3"]
-[ext_resource type="Script" uid="uid://ddw458u256eu0" path="res://Scripts/grid_generator.gd" id="2_twpsu"]
+[ext_resource type="Script" uid="uid://bahho8eyhox8n" path="res://scripts/camera.gd" id="1_twpsu"]
+[ext_resource type="Script" uid="uid://ddw458u256eu0" path="res://scripts/grid_generator.gd" id="2_twpsu"]
 [ext_resource type="PackedScene" uid="uid://d1p6sj0gwc818" path="res://scenes/Area(1, 1).tscn" id="3_lrqlo"]
-
-[sub_resource type="PackedScene" id="PackedScene_lrqlo"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [],
-"names": PackedStringArray("Area(1,1)", "Node2D", "Sprite2D", "texture"),
-"node_count": 2,
-"node_ids": PackedInt32Array(476467761, 1344644748),
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 1, 3, 0, 0),
-"variants": [ExtResource("1_j5px3")],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://k81dxc7535qm" path="res://scenes/Area(2, 1).tscn" id="4_kycxp"]
+[ext_resource type="PackedScene" uid="uid://c7h6a7q8t0n37" path="res://scenes/Area(3,1).tscn" id="5_j287u"]
+[ext_resource type="PackedScene" uid="uid://bsx4hsacnruf8" path="res://scenes/Area (2,2).tscn" id="6_5sfjl"]
+[ext_resource type="Script" uid="uid://hmtx6wurmfil" path="res://scripts/ui_manager.gd" id="7_j287u"]
 
 [node name="Root" type="Node2D" unique_id=1738037333]
 
+[node name="Areas" type="Node" parent="." unique_id=1155218085]
+
+[node name="Area(1,1)" parent="Areas" unique_id=476467761 instance=ExtResource("3_lrqlo")]
+
+[node name="Area(2,1)" parent="Areas" unique_id=1528390563 instance=ExtResource("4_kycxp")]
+position = Vector2(320, 0)
+
+[node name="Area(3,1)" parent="Areas" unique_id=88844418 instance=ExtResource("5_j287u")]
+position = Vector2(640, 0)
+
+[node name="Area(2,2)" parent="Areas" unique_id=354211988 instance=ExtResource("6_5sfjl")]
+position = Vector2(320, 180)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1358700642]
+
+[node name="UIManager" type="Node" parent="CanvasLayer" unique_id=107467287]
+unique_name_in_owner = true
+script = ExtResource("7_j287u")
+
+[node name="RightButton" type="Button" parent="CanvasLayer/UIManager" unique_id=554454836]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -4.0
+offset_right = -20.0
+offset_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LeftButton" type="Button" parent="CanvasLayer/UIManager" unique_id=1793632511]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -4.0
+offset_right = 52.0
+offset_bottom = 28.0
+grow_vertical = 2
+
+[node name="UpButton" type="Button" parent="CanvasLayer/UIManager" unique_id=1770341046]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 52.0
+grow_horizontal = 2
+
+[node name="DownButton" type="Button" parent="CanvasLayer/UIManager" unique_id=51409274]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 16.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [node name="Camera" type="Camera2D" parent="." unique_id=2035550843]
-visible = false
-enabled = false
-zoom = Vector2(2.25, 2.53)
+texture_filter = 1
+zoom = Vector2(3.6, 3.6)
+limit_smoothed = true
+script = ExtResource("1_twpsu")
 
 [node name="GridGenerator" type="Node" parent="." unique_id=1751339165]
 script = ExtResource("2_twpsu")
-area_list = [SubResource("PackedScene_lrqlo"), ExtResource("3_lrqlo"), ExtResource("3_lrqlo"), ExtResource("3_lrqlo")]
 
 [node name="DebugCam" type="Camera2D" parent="." unique_id=174959799]
+visible = false
+enabled = false
 zoom = Vector2(0.23, 0.23)

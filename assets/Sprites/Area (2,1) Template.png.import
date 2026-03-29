@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqm8lnpt85iek"
-path="res://.godot/imported/AreaTemplate.png-222593c08b99590b33e1aea27eabb36c.ctex"
+uid="uid://c7gapsvwdsnp2"
+path="res://.godot/imported/Area (2,1) Template.png-816321587b0fd60d6d3cba7b08b27011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/AreaTemplate.png"
-dest_files=["res://.godot/imported/AreaTemplate.png-222593c08b99590b33e1aea27eabb36c.ctex"]
+source_file="res://assets/Sprites/Area (2,1) Template.png"
+dest_files=["res://.godot/imported/Area (2,1) Template.png-816321587b0fd60d6d3cba7b08b27011.ctex"]
 
 [params]
 
