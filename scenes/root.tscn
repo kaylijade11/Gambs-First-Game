@@ -2,14 +2,21 @@
 
 [ext_resource type="Script" uid="uid://bahho8eyhox8n" path="res://scripts/camera.gd" id="1_twpsu"]
 [ext_resource type="Script" uid="uid://ddw458u256eu0" path="res://scripts/grid_generator.gd" id="2_twpsu"]
+[ext_resource type="Texture2D" uid="uid://d21jblfklg86l" path="res://assets/Sprites/Tree1 Placeholder.png" id="2_vgks2"]
+[ext_resource type="Texture2D" uid="uid://c8hruchi0lebw" path="res://assets/Sprites/Bush1 Placeholder.png" id="3_dylgi"]
+[ext_resource type="Texture2D" uid="uid://qqufq80kllem" path="res://assets/Sprites/Tree2 Placeholder.png" id="3_jrhyn"]
 [ext_resource type="PackedScene" uid="uid://d1p6sj0gwc818" path="res://scenes/Area(1, 1).tscn" id="3_lrqlo"]
+[ext_resource type="Texture2D" uid="uid://d373kdrutn6pi" path="res://assets/Sprites/Bush2 Placeholder.png" id="4_jrhyn"]
 [ext_resource type="PackedScene" uid="uid://k81dxc7535qm" path="res://scenes/Area(2, 1).tscn" id="4_kycxp"]
+[ext_resource type="Script" uid="uid://cloo864mlb4ta" path="res://scenes/tree_1.gd" id="4_log26"]
 [ext_resource type="PackedScene" uid="uid://c7h6a7q8t0n37" path="res://scenes/Area(3,1).tscn" id="5_j287u"]
 [ext_resource type="Texture2D" uid="uid://deeemdsloqm7t" path="res://assets/Sprites/Right Arrow.png" id="6_3hfy5"]
 [ext_resource type="PackedScene" uid="uid://bsx4hsacnruf8" path="res://scenes/Area (2,2).tscn" id="6_5sfjl"]
 [ext_resource type="Texture2D" uid="uid://yqbptbti5c58" path="res://assets/Sprites/Left Arrow.png" id="7_3hfy5"]
+[ext_resource type="Script" uid="uid://bpg1eqw5md6n8" path="res://scenes/bush_1.gd" id="7_gt4lb"]
 [ext_resource type="Script" uid="uid://hmtx6wurmfil" path="res://scripts/ui_manager.gd" id="7_j287u"]
 [ext_resource type="Texture2D" uid="uid://dcp7fos1v6jd0" path="res://assets/Sprites/Up Arrow.png" id="8_7pvxh"]
+[ext_resource type="Script" uid="uid://ciamxchbsj8t0" path="res://scenes/cat_1.gd" id="8_gt4lb"]
 [ext_resource type="Texture2D" uid="uid://cuojqel7pnt2y" path="res://assets/Sprites/Down Arrow.png" id="9_y3xxt"]
 
 [node name="Root" type="Node2D" unique_id=1738037333]
@@ -17,6 +24,37 @@
 [node name="Areas" type="Node" parent="." unique_id=1155218085]
 
 [node name="Area(1,1)" parent="Areas" unique_id=476467761 instance=ExtResource("3_lrqlo")]
+
+[node name="Tree1" type="TextureButton" parent="Areas/Area(1,1)" unique_id=2131407810]
+offset_left = 71.0
+offset_top = -66.0
+offset_right = 135.0
+offset_bottom = 12.0
+texture_normal = ExtResource("2_vgks2")
+texture_pressed = ExtResource("3_jrhyn")
+script = ExtResource("4_log26")
+
+[node name="Bush1" type="TextureButton" parent="Areas/Area(1,1)" unique_id=1497823284]
+z_index = 1
+texture_filter = 1
+offset_left = 15.0
+offset_top = -9.0
+offset_right = 139.0
+offset_bottom = 105.0
+texture_normal = ExtResource("3_dylgi")
+texture_pressed = ExtResource("4_jrhyn")
+stretch_mode = 4
+script = ExtResource("7_gt4lb")
+
+[node name="Cat1" type="TextureButton" parent="Areas/Area(1,1)/Bush1" unique_id=230525334]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 90.0
+offset_bottom = 90.0
+mouse_filter = 2
+texture_normal = ExtResource("6_3hfy5")
+script = ExtResource("8_gt4lb")
 
 [node name="Area(2,1)" parent="Areas" unique_id=1528390563 instance=ExtResource("4_kycxp")]
 position = Vector2(320, 0)
@@ -34,6 +72,7 @@ unique_name_in_owner = true
 script = ExtResource("7_j287u")
 
 [node name="RightButton" type="TextureButton" parent="CanvasLayer/UIManager" unique_id=383472467]
+texture_filter = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -48,6 +87,7 @@ grow_vertical = 2
 texture_normal = ExtResource("6_3hfy5")
 
 [node name="LeftButton" type="TextureButton" parent="CanvasLayer/UIManager" unique_id=1146113660]
+texture_filter = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -60,6 +100,7 @@ button_mask = 7
 texture_normal = ExtResource("7_3hfy5")
 
 [node name="UpButton" type="TextureButton" parent="CanvasLayer/UIManager" unique_id=1326822429]
+texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -71,6 +112,7 @@ grow_horizontal = 2
 texture_normal = ExtResource("8_7pvxh")
 
 [node name="DownButton" type="TextureButton" parent="CanvasLayer/UIManager" unique_id=198130559]
+texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

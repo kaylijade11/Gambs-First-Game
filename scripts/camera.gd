@@ -19,8 +19,8 @@ func _ready() -> void:
 	grid_check()
 	
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 # Checking if the next area is out of bounds and if it is, it gets rid of the 
 # arrow
